@@ -1,0 +1,55 @@
+<svg  viewBox="0 0 500 100" width="300" height="60"  xmlns="http://www.w3.org/2000/svg">
+  <!-- 定义 CSS 样式 -->
+  <style>
+    .text {
+      font-family: 'Microsoft YaHei UI', sans-serif;
+      font-size: 46px;
+      fill: #000;
+      font-weight: 700;
+    }
+    .highlight {
+      fill: #1e40af; /* HandSonic 字体颜色 */
+      font-weight: 700; /* 加粗 */
+      letter-spacing: 0.75px;
+      font-size: 52.9px;
+    }
+    .phonetic {
+      font-style: italic; /* 斜体 */
+      fill: #555;
+      letter-spacing: 0.75px;
+    }
+    .decorative-line {
+      fill: #dbeafe; /* 线条颜色 */
+      opacity: 0.8; /* 透明度 */
+    }
+  </style>
+
+  <!-- 显示 "I'm HandSonic /'/" -->
+  <g>
+    <!-- 显示 "I'm" -->
+    <text class="text" x="20" y="20">👋Hello,</text>
+    <text class="text" x="83" y="80">I'm</text>
+
+    <!-- 装饰线条，位于 "HandSonic" 下方 -->
+    <rect class="decorative-line" x="174" y="61" width="0" height="20" id="line"></rect>
+
+    <!-- 显示 "HandSonic" 并添加悬浮事件 -->
+    <text class="text" x="170" y="80" onmouseover="startAnimation()" onmouseout="resetAnimation()">
+      <tspan class="highlight">HandSonic</tspan>
+    </text>
+  </g>
+
+  <!-- 定义动画 -->
+  <script>
+    function startAnimation() {
+      var line = document.getElementById("line");
+      line.setAttribute("width", "290");
+      line.setAttribute("fill", "freeze");
+    }
+
+    function resetAnimation() {
+      var line = document.getElementById("line");
+      line.setAttribute("width", "0");
+    }
+  </script>
+</svg>
